@@ -1,0 +1,52 @@
+backend:
+  name: git-gateway
+  branch: main
+media_folder: "assets/uploads"
+public_folder: "/assets/uploads"
+collections:
+  - name: "content"
+    label: "Contenido del sitio"
+    files:
+      - label: "Mi Vivero — Sitio completo"
+        name: "site"
+        file: "content/site.json"
+        fields:
+          - label: "Marca y logo"
+            name: "brand"
+            widget: "object"
+            fields:
+              - {label: "Nombre del vivero", name: "name", widget: "string"}
+              - {label: "Eslogan", name: "tagline", widget: "string"}
+              - {label: "Logo", name: "logo", widget: "image", required: false}
+          - label: "Portada"
+            name: "hero"
+            widget: "object"
+            fields:
+              - {label: "Texto superior", name: "eyebrow", widget: "string"}
+              - {label: "Título principal", name: "title", widget: "string"}
+              - {label: "Palabra destacada", name: "accent", widget: "string"}
+              - {label: "Descripción", name: "copy", widget: "text"}
+              - {label: "Imagen de portada", name: "image", widget: "image"}
+          - label: "Nosotros"
+            name: "about"
+            widget: "object"
+            fields:
+              - {label: "Texto superior", name: "eyebrow", widget: "string"}
+              - {label: "Título", name: "title", widget: "string"}
+              - {label: "Descripción", name: "copy", widget: "text"}
+          - label: "Contacto"
+            name: "contact"
+            widget: "object"
+            fields:
+              - {label: "WhatsApp (con indicativo, sin +)", name: "phone", widget: "string"}
+              - {label: "Correo", name: "email", widget: "string"}
+              - {label: "Dirección (usa | para salto de línea)", name: "address", widget: "string"}
+              - {label: "Horarios (usa | para salto de línea)", name: "hours", widget: "string"}
+          - label: "Productos destacados"
+            name: "products"
+            widget: "list"
+            fields:
+              - {label: "Nombre", name: "name", widget: "string"}
+              - {label: "Categoría", name: "category", widget: "string"}
+              - {label: "Descripción", name: "description", widget: "text"}
+              - {label: "Precio", name: "price", widget: "string"}
